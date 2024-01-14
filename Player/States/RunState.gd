@@ -19,8 +19,7 @@ func transition():
 func enter():
 	super.enter()
 	owner.velocity.x = owner.direction * owner.speed
-	%AnimationTree.set("parameters/IdleToRun/blend_position", owner.direction)
-	%AnimationTree.set("parameters/Movement/transition_request", "IdleToRun")
+	%AnimationTree.set("parameters/Movement/transition_request", "Run")
 
 func exit():
 	super.exit()

@@ -19,8 +19,7 @@ func transition():
 func enter():
 	super.enter()
 	owner.direction = 0
-	%AnimationTree.set("parameters/IdleToRun/blend_position", owner.direction)
-	%AnimationTree.set("parameters/Movement/transition_request", "IdleToRun")
+	%AnimationTree.set("parameters/Movement/transition_request", "Idle")
 
 func exit():
 	super.exit()
