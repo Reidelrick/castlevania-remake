@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="Accessory" load_steps=2 format=3 uid="uid://cbfhma7q87kai"]
+
+[ext_resource type="Script" path="res://Player/Ressources/Equipment/Accessories/Accessory.gd" id="1_wfmxt"]
+
+[resource]
+script = ExtResource("1_wfmxt")

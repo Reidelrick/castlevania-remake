@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://d20rgroctutin"]
+
+[ext_resource type="Script" path="res://UI/Menus/main_menu.gd" id="1_4le3w"]
+[ext_resource type="Texture2D" uid="uid://rs8f0ce7niof" path="res://UI/Assets/Base-01.png" id="1_kfspq"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 7.0
+offset_right = 1.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4le3w")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 164.0
+offset_bottom = 97.0
+texture = ExtResource("1_kfspq")
+region_rect = Rect2(16, 224, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2

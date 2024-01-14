@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://2efdb7e3um8"]
+
+[ext_resource type="Script" path="res://Player/Ressources/Equipment/Weapons/Weapon.gd" id="1_083y8"]
+
+[resource]
+script = ExtResource("1_083y8")
+type = "Katana"
+name = "Muramasa"
+power = 666
+knockback = 0.0
+price = 0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://bkux48t3yjgm3"]
+
+[ext_resource type="Script" path="res://Player/Ressources/Equipment/Weapons/Weapon.gd" id="1_yhgt5"]
+
+[resource]
+script = ExtResource("1_yhgt5")
+type = "Sword"
+name = "Blutgang"
+power = 30
+knockback = 0.0
+price = 0

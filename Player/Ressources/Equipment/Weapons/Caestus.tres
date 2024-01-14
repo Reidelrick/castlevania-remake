@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://btnbstsyi0k10"]
+
+[ext_resource type="Script" path="res://Player/Ressources/Equipment/Weapons/Weapon.gd" id="1_kos1y"]
+
+[resource]
+script = ExtResource("1_kos1y")
+type = ""
+name = ""
+power = 0
+knockback = 0.0
+price = 0
