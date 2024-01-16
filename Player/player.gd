@@ -4,6 +4,8 @@ var direction : int
 @export var speed : int = 300
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var reset_position: Vector2
+
 var jump_force = -490
 
 func _ready():
@@ -24,3 +26,7 @@ func _physics_process(_delta):
 		velocity.y += gravity
 
 	move_and_slide()
+
+func on_enter():
+	# Position for kill system. Assigned when entering new room (see Game.gd).
+	reset_position = position

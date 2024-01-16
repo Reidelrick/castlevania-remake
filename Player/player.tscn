@@ -281,7 +281,6 @@ animation = &"Run"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_qa22e"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_m4m3r"]
-graph_offset = Vector2(-33.1302, -177.775)
 nodes/Air/node = SubResource("AnimationNodeBlendSpace1D_xf07c")
 nodes/Air/position = Vector2(440, 40)
 nodes/Attack/node = SubResource("AnimationNodeOneShot_41utg")

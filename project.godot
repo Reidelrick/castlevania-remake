@@ -8,17 +8,22 @@
 
 config_version=5
 
+[addons]
+
+metroidvania_system/settings_file="res://MetSysSettings.tres"
+
 [application]
 
 config/name="Castlevania Remake"
 config/description="a castlevania remake."
-run/main_scene="res://World/Rooms/test_room.tscn"
+run/main_scene="res://Game.tscn"
 config/features=PackedStringArray("4.2")
-config/icon="res://4418.png"
+config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.gd"
+MetSys="*res://addons/MetroidvaniaSystem/Nodes/Singleton.tscn"
 
 [display]
 
@@ -27,6 +32,10 @@ window/size/viewport_height=324
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MetroidvaniaSystem/plugin.cfg")
 
 [input]
 
