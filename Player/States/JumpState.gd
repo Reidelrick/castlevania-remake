@@ -21,3 +21,5 @@ func enter():
 
 func _physics_process(delta):
 	super._physics_process(delta)
+	#if Input.is_action_just_pressed("jump"):
+		#owner.velocity.y -= 500

@@ -307,7 +307,6 @@ radius = 7.0
 height = 48.0
 
 [node name="Player" type="CharacterBody2D"]
-floor_stop_on_slope = false
 floor_snap_length = 16.0
 script = ExtResource("1_jkca0")
 

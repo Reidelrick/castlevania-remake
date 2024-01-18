@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh2ek86sjy0k5"]
+[gd_scene load_steps=7 format=3 uid="uid://bh2ek86sjy0k5"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_j5xh1"]
 [ext_resource type="PackedScene" uid="uid://oenpdemhq5oj" path="res://Player/player.tscn" id="2_fe11p"]
+[ext_resource type="PackedScene" uid="uid://34g7hhdsei2e" path="res://UI/GUI/minimap.tscn" id="3_v8rfh"]
+[ext_resource type="Script" path="res://UI/GUI/minimap.gd" id="4_wmu0t"]
+[ext_resource type="PackedScene" uid="uid://c83akpkr4km07" path="res://UI/GUI/map.tscn" id="5_mfncy"]
+[ext_resource type="Script" path="res://UI/GUI/map.gd" id="6_mi260"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_j5xh1")
@@ -10,3 +14,26 @@ starting_map = "Start.tscn"
 [node name="Player" parent="." instance=ExtResource("2_fe11p")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Minimap" parent="UI" instance=ExtResource("3_v8rfh")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_top = 7.0
+offset_right = -8.0
+offset_bottom = 71.0
+grow_horizontal = 0
+script = ExtResource("4_wmu0t")
+
+[node name="Map" parent="UI" instance=ExtResource("5_mfncy")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_mi260")
