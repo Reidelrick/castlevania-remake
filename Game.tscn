@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh2ek86sjy0k5"]
+[gd_scene load_steps=10 format=3 uid="uid://bh2ek86sjy0k5"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_j5xh1"]
 [ext_resource type="PackedScene" uid="uid://oenpdemhq5oj" path="res://Player/player.tscn" id="2_fe11p"]
@@ -6,6 +6,44 @@
 [ext_resource type="Script" path="res://UI/GUI/minimap.gd" id="4_wmu0t"]
 [ext_resource type="PackedScene" uid="uid://c83akpkr4km07" path="res://UI/GUI/map.tscn" id="5_mfncy"]
 [ext_resource type="Script" path="res://UI/GUI/map.gd" id="6_mi260"]
+
+[sub_resource type="Animation" id="Animation_1w2er"]
+resource_name = "Fade"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mhkbo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gk6fn"]
+_data = {
+"Fade": SubResource("Animation_1w2er"),
+"RESET": SubResource("Animation_mhkbo")
+}
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_j5xh1")
@@ -27,6 +65,20 @@ offset_right = -8.0
 offset_bottom = 71.0
 grow_horizontal = 0
 script = ExtResource("4_wmu0t")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Minimap"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 64.0
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Minimap/ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_gk6fn")
+}
+autoplay = "Fade"
 
 [node name="Map" parent="UI" instance=ExtResource("5_mfncy")]
 anchors_preset = 15

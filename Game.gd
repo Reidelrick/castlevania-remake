@@ -53,6 +53,8 @@ func _ready() -> void:
 	
 	# Add module for room transitions.
 	add_module("RoomTransitions.gd")
+	
+	var player_location = load("res://MetSysSettings.tres")
 
 # Returns this node from anywhere.
 static func get_singleton() -> Game:
