@@ -37,6 +37,20 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/MetroidvaniaSystem/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Enemies/": "red",
+"res://Enemies/Assets/": "yellow",
+"res://Player/": "blue",
+"res://Player/Assets/": "yellow",
+"res://UI/": "teal",
+"res://UI/Assets/": "yellow",
+"res://World/": "green",
+"res://World/Assets/": "yellow",
+"res://addons/": "purple"
+}
+
 [input]
 
 left={

@@ -56,6 +56,8 @@ func _ready() -> void:
 	
 	var player_location = load("res://MetSysSettings.tres")
 
+	MetSys.connect("room_changed", create_room_name_label)
+
 # Returns this node from anywhere.
 static func get_singleton() -> Game:
 	return (Game as Script).get_meta(&"singleton") as Game
@@ -72,3 +74,14 @@ func save_game():
 func init_room():
 	MetSys.get_current_room_instance().adjust_camera_limits($Player/Camera2D)
 	player.on_enter()
+
+func create_room_name_label(map: String):
+	var label = RoomName.new()
+	for c in %UI.get_children():
+		if c.name == "RoomName":
+			%UI.remove_child(c)
+	label.name = "RoomName"
+	%UI.add_child(label)
+	label.fade = true
+	label.display_map(map)
+	

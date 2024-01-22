@@ -33,6 +33,9 @@ func _ready() -> void:
 	MetSys.map_updated.connect(queue_redraw)
 	if track_position:
 		MetSys.cell_changed.connect(_on_cell_changed)
+		
+	$PlayerPos.size = Vector2i(size)/area
+	$PlayerPos.position = (Vector2i(size)/area)*floor(area/2)
 
 func _on_cell_changed(new_cell: Vector3i):
 	center = Vector2i(new_cell.x, new_cell.y)

@@ -1,5 +1,13 @@
-[gd_scene format=3 uid="uid://c83akpkr4km07"]
+[gd_scene load_steps=3 format=3 uid="uid://c83akpkr4km07"]
+
+[ext_resource type="Script" path="res://UI/GUI/map.gd" id="1_chlfa"]
+[ext_resource type="PackedScene" uid="uid://epncdscb1obf" path="res://UI/GUI/room_name.tscn" id="1_f18dq"]
 
 [node name="Map" type="Panel"]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_chlfa")
+
+[node name="RoomName" parent="." instance=ExtResource("1_f18dq")]
+layout_mode = 0
+offset_bottom = 23.0

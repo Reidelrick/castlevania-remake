@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://epncdscb1obf"]
+
+[ext_resource type="Script" path="res://UI/GUI/room_name.gd" id="1_hhtha"]
+[ext_resource type="Theme" uid="uid://26aggg3pv026" path="res://UI/Assets/Theme.tres" id="1_q1872"]
+
+[node name="RoomName" type="Label"]
+offset_right = 1.0
+offset_bottom = 22.0
+theme = ExtResource("1_q1872")
+script = ExtResource("1_hhtha")

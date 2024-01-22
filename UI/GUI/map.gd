@@ -20,6 +20,7 @@ func _ready() -> void:
 	MetSys.map_updated.connect(queue_redraw)
 	# Create player location. We need a reference to update its offset.
 	player_location = MetSys.add_player_location(self)
+	MetSys.connect("room_changed", $RoomName.display_map)
 
 func _draw() -> void:
 	for x in SIZE.x:
