@@ -27,6 +27,8 @@ func _physics_process(_delta):
 
 	move_and_slide()
 
+	%AnimationPlayer.update_anim(PlayerStats.weapon.length, PlayerStats.weapon.texture)
+
 func on_enter():
 	# Position for kill system. Assigned when entering new room (see Game.gd).
 	reset_position = position

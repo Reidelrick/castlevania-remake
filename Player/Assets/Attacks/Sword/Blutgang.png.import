@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1mm5oax82x1v"
-path="res://.godot/imported/player shoot 2H 48x48.png-938772bccdf02341fc3435187f5fdf08.ctex"
+uid="uid://rjr4tpkahqgw"
+path="res://.godot/imported/Blutgang.png-f71da6f8fc50356f55f00b518b2b9d52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Assets/Attacks/Gun/player shoot 2H 48x48.png"
-dest_files=["res://.godot/imported/player shoot 2H 48x48.png-938772bccdf02341fc3435187f5fdf08.ctex"]
+source_file="res://Player/Assets/Attacks/Sword/Blutgang.png"
+dest_files=["res://.godot/imported/Blutgang.png-f71da6f8fc50356f55f00b518b2b9d52.ctex"]
 
 [params]
 

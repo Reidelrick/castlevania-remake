@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://cxvyefbxn674u"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://cxvyefbxn674u"]
 
 [ext_resource type="Script" path="res://Player/Ressources/Equipment/Weapons/Weapon.gd" id="1_hbsto"]
+[ext_resource type="Texture2D" uid="uid://b4vm1aeguhq0v" path="res://Player/Assets/Attacks/ThrustingSword/Fleuret.png" id="2_7oegs"]
 
 [resource]
 script = ExtResource("1_hbsto")
@@ -9,3 +10,5 @@ name = ""
 power = 0
 knockback = 0.0
 price = 0
+texture = ExtResource("2_7oegs")
+length = 7

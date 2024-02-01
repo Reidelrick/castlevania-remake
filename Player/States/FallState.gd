@@ -3,7 +3,9 @@ class_name FallState
 
 func transition():
 	if owner.is_on_floor():
-		if owner.direction == 0:
+		if Input.is_action_just_pressed("attack"):
+			fsm.change_state("AirAttackState")
+		elif owner.direction == 0:
 			fsm.change_state("IdleState")
 		elif owner.direction != 0:
 			fsm.change_state("RunState")

@@ -1,0 +1,150 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhgfbh1dw6lop"]
+
+[ext_resource type="Script" path="res://Enemies/Snail.gd" id="1_04lyi"]
+[ext_resource type="Texture2D" uid="uid://b2fe3yhu1fd0p" path="res://Enemies/Assets/Snail/Hide-Sheet.png" id="2_2anjx"]
+[ext_resource type="Texture2D" uid="uid://dlwanirc7wlbg" path="res://Enemies/Assets/Snail/Dead-Sheet.png" id="2_ay5jv"]
+[ext_resource type="Texture2D" uid="uid://brcedg4vnmxv6" path="res://Enemies/Assets/Snail/walk-Sheet.png" id="2_du87r"]
+
+[sub_resource type="Animation" id="Animation_r4f3m"]
+resource_name = "Death"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ay5jv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_g2jjn"]
+resource_name = "Hide"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_2anjx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_x33ja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_c5wia"]
+resource_name = "Walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_du87r")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vh7ur"]
+_data = {
+"Death": SubResource("Animation_r4f3m"),
+"Hide": SubResource("Animation_g2jjn"),
+"RESET": SubResource("Animation_x33ja"),
+"Walk": SubResource("Animation_c5wia")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sl64a"]
+radius = 11.0
+
+[node name="Snail" type="CharacterBody2D"]
+script = ExtResource("1_04lyi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vh7ur")
+}
+autoplay = "Walk"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ay5jv")
+hframes = 8
+
+[node name="WallDetect" type="RayCast2D" parent="."]
+target_position = Vector2(-16, 0)
+collision_mask = 65535
+
+[node name="GapDetect" type="RayCast2D" parent="."]
+target_position = Vector2(0, 17)
+collision_mask = 65535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_sl64a")
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerDetect"]
+polygon = PackedVector2Array(0, 0, -106, -50, -106, 59)
+
+[connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_entered"]
+[connection signal="body_exited" from="PlayerDetect" to="." method="_on_player_exited"]

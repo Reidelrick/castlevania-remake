@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rjr4tpkahqgw"
-path="res://.godot/imported/player sword atk 64x64.png-44802f41425d172121fdc01c39b5ed4c.ctex"
+uid="uid://b6eq357in0b40"
+path="res://.godot/imported/Muramasa.png-f9a7607965d5b69d6ec6478f8ac35723.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Assets/Attacks/Sword/player sword atk 64x64.png"
-dest_files=["res://.godot/imported/player sword atk 64x64.png-44802f41425d172121fdc01c39b5ed4c.ctex"]
+source_file="res://Player/Assets/Attacks/Katana/Muramasa.png"
+dest_files=["res://.godot/imported/Muramasa.png-f9a7607965d5b69d6ec6478f8ac35723.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

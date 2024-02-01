@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://bkux48t3yjgm3"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://bkux48t3yjgm3"]
 
 [ext_resource type="Script" path="res://Player/Ressources/Equipment/Weapons/Weapon.gd" id="1_yhgt5"]
+[ext_resource type="Texture2D" uid="uid://rjr4tpkahqgw" path="res://Player/Assets/Attacks/Sword/Blutgang.png" id="2_e3ji1"]
 
 [resource]
 script = ExtResource("1_yhgt5")
@@ -9,3 +10,5 @@ name = "Blutgang"
 power = 30
 knockback = 0.0
 price = 0
+texture = ExtResource("2_e3ji1")
+length = 6

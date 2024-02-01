@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://2efdb7e3um8"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://2efdb7e3um8"]
 
 [ext_resource type="Script" path="res://Player/Ressources/Equipment/Weapons/Weapon.gd" id="1_083y8"]
+[ext_resource type="Texture2D" uid="uid://b6eq357in0b40" path="res://Player/Assets/Attacks/Katana/Muramasa.png" id="2_gn3dn"]
 
 [resource]
 script = ExtResource("1_083y8")
@@ -9,3 +10,5 @@ name = "Muramasa"
 power = 666
 knockback = 0.0
 price = 0
+texture = ExtResource("2_gn3dn")
+length = 16

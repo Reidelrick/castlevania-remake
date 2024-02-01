@@ -5,7 +5,9 @@ class_name JumpState
 
 func transition():
 	if fsm.can_transition:
-		if owner.velocity.y > 0:
+		if Input.is_action_just_pressed("attack"):
+			fsm.change_state("AirAttackState")
+		elif owner.velocity.y > 0:
 			fsm.change_state("FallState")
 		elif owner.is_on_floor():
 			if owner.direction == 0:

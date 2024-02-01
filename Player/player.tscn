@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Player/player.gd" id="1_jkca0"]
 [ext_resource type="Texture2D" uid="uid://dsdkudwoibsxu" path="res://Player/Assets/Movement/Player Crouch-Idle 48x48.png" id="2_bjaju"]
 [ext_resource type="Texture2D" uid="uid://cklweyhvypmg" path="res://Player/Assets/Movement/Character Idle 48x48.png" id="3_b5oas"]
-[ext_resource type="Texture2D" uid="uid://b6eq357in0b40" path="res://Player/Assets/Attacks/Katana/player katana attack-sheathe 80x64.png" id="4_5na0e"]
 [ext_resource type="Texture2D" uid="uid://bhshjv0c2550p" path="res://Player/Assets/Movement/run cycle 48x48.png" id="4_d0rca"]
 [ext_resource type="Texture2D" uid="uid://b43mjherkcu10" path="res://Player/Assets/Movement/player jump 48x48.png" id="4_rut8a"]
 [ext_resource type="Script" path="res://Player/States/CharacterStateMachine.gd" id="7_6usqd"]
@@ -13,6 +12,7 @@
 [ext_resource type="Script" path="res://Player/States/JumpState.gd" id="10_wekmp"]
 [ext_resource type="Script" path="res://Player/States/FallState.gd" id="11_i7oy2"]
 [ext_resource type="Script" path="res://Player/States/CrouchState.gd" id="12_47h7o"]
+[ext_resource type="Script" path="res://Player/States/AirAttackState.gd" id="15_3yqyl"]
 [ext_resource type="Script" path="res://Player/States/GroundAttackState.gd" id="15_hrd5l"]
 
 [sub_resource type="Animation" id="Animation_vk0oj"]
@@ -304,7 +304,7 @@ node_connections = [&"Attack", 0, &"Movement", &"Attack", 1, &"AttackMode", &"At
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_khw8f"]
 radius = 7.0
-height = 48.0
+height = 32.0
 
 [node name="Player" type="CharacterBody2D"]
 floor_snap_length = 16.0
@@ -317,8 +317,6 @@ libraries = {
 "": SubResource("AnimationLibrary_a7imt")
 }
 script = ExtResource("9_j3mc6")
-length = 16
-texture = ExtResource("4_5na0e")
 
 [node name="WeaponAnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -374,3 +372,6 @@ script = ExtResource("12_47h7o")
 
 [node name="GroundAttackState" type="Node" parent="StateMachine"]
 script = ExtResource("15_hrd5l")
+
+[node name="AirAttackState" type="Node" parent="StateMachine"]
+script = ExtResource("15_3yqyl")

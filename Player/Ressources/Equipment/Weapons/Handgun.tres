@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://cmbqhh2g4jm52"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://cmbqhh2g4jm52"]
 
 [ext_resource type="Script" path="res://Player/Ressources/Equipment/Weapons/Weapon.gd" id="1_36h1t"]
+[ext_resource type="Texture2D" uid="uid://d1mm5oax82x1v" path="res://Player/Assets/Attacks/Gun/Handgun.png" id="2_xffrp"]
 
 [resource]
 script = ExtResource("1_36h1t")
 type = ""
-name = ""
+name = "Handgun"
 power = 0
 knockback = 0.0
 price = 0
+texture = ExtResource("2_xffrp")
+length = 10

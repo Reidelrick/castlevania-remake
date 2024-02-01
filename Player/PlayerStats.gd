@@ -1,7 +1,7 @@
 extends Node
 
 
-var weapon : Weapon = load("res://Player/Ressources/Equipment/Weapons/Muramasa.tres")
+var weapon : Weapon = load("res://Player/Ressources/Equipment/Weapons/Fleuret.tres")
 var armor : Armor
 var accessory_1 : Accessory
 

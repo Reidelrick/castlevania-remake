@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpwadf7odibse"
-path="res://.godot/imported/Player Jab 48x48.png-bd7690dea67c3ab2df5372705ec1b609.ctex"
+path="res://.godot/imported/Caestus.png-eb2454ba53a8e4b1c78bb3eba3e673e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Assets/Attacks/Punch/Player Jab 48x48.png"
-dest_files=["res://.godot/imported/Player Jab 48x48.png-bd7690dea67c3ab2df5372705ec1b609.ctex"]
+source_file="res://Player/Assets/Attacks/Punch/Caestus.png"
+dest_files=["res://.godot/imported/Caestus.png-eb2454ba53a8e4b1c78bb3eba3e673e6.ctex"]
 
 [params]
 
